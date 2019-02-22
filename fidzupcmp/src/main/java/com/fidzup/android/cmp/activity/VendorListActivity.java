@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -89,6 +87,7 @@ public class VendorListActivity extends ConsentActivity {
             vendorStatusSwitch = itemView.findViewById(R.id.vendor_status_switch);
 
             // Make the clickable zone bigger to ease the click
+            /*
             RelativeLayout clickableZone = itemView.findViewById(R.id.clickable_zone_switch);
             clickableZone.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -96,6 +95,7 @@ public class VendorListActivity extends ConsentActivity {
                     vendorStatusSwitch.setChecked(!vendorStatusSwitch.isChecked());
                 }
             });
+            */
 
             vendorStatusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -121,7 +121,6 @@ public class VendorListActivity extends ConsentActivity {
 
         public void setVendor(@NonNull Vendor vendor) {
             this.vendor = vendor;
-
             vendorNameTextView.setText(vendor.getName());
             vendorStatusSwitch.setChecked(consentString.isVendorAllowed(vendor.getId()));
         }
@@ -136,12 +135,7 @@ public class VendorListActivity extends ConsentActivity {
         @NonNull
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vendor_cell, parent, false);
-
-            int toShow = isReadOnly ? R.id.vendor_next_icon : R.id.vendor_status_switch;
-            int toHide = isReadOnly ? R.id.vendor_status_switch : R.id.vendor_next_icon;
-            v.findViewById(toShow).setVisibility(View.VISIBLE);
-            v.findViewById(toHide).setVisibility(View.GONE);
-
+            v.findViewById(R.id.vendor_status_switch).setVisibility(isReadOnly ? View.GONE : View.VISIBLE);
             return new VendorViewHolder(v);
         }
 

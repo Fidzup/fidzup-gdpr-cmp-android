@@ -26,6 +26,8 @@ import java.util.ArrayList;
 
 public class MainConsentActivity extends ConsentActivity {
 
+    private static final int VENDORS_LIST_ACTIVITY_REQUEST_CODE = 1;
+
     ConsentString consentString;
     ConsentToolConfiguration cmpConfig;
 
@@ -45,6 +47,29 @@ public class MainConsentActivity extends ConsentActivity {
                 DividerItemDecoration.VERTICAL);
         table.addItemDecoration(mDividerItemDecoration);
         table.setItemAnimator(null);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case VENDORS_LIST_ACTIVITY_REQUEST_CODE:
+                    ConsentString consentString = getResultConsentString(data);
+                    if (consentString != null) {
+                        this.consentString = consentString;
+
+                        // Update the manager with the new consent string
+                        // warning : this assumes that the current activity is root
+                        // TODO : only update this.consentString and remove every use of ConsentManager.getSharedInstance()
+                        storeConsentString(consentString);
+                    }
+                    break;
+
+                default:
+                    super.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+        else
+            super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -135,11 +160,11 @@ public class MainConsentActivity extends ConsentActivity {
                     public void onClick(View view) {
                         // Start the VendorListActivity
                         Intent intent = getIntentForConsentActivity(VendorListActivity.class,
-                                getConsentStringFromIntent(),
+                                consentString,
                                 getVendorListFromIntent(),
                                 getEditorFromIntent());
-                        intent.putExtra(VendorListActivity.EXTRA_READONLY, true);
-                        startActivityForResult(intent, 0);
+                        //intent.putExtra(VendorListActivity.EXTRA_READONLY, true);
+                        startActivityForResult(intent, VENDORS_LIST_ACTIVITY_REQUEST_CODE);
                     }
                 });
             }
