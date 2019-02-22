@@ -17,7 +17,7 @@ Nous avons donc fait le choix de ne garder qu'une seule popup dans notre CMP. Pa
 _Exemple de popup qui convient pour la récolte de données géolocalisée à des fins publicitaires:_
 
 <p align="center">
-  <img src="images/cnil-fr/android_cnil_fr_popup.png" alt="Consent tool Popup on Android" width="40%" height="40%"/>
+  <img src="images/cnil-fr/android_cnil_fr_choices_1.png" alt="Consent tool Purpose List on Android" width="40%" height="40%"/>
 </p>
 
 On peut décomposer cette popup en trois éléments distincts:
@@ -51,7 +51,6 @@ Enfin cette poup doit se terminer par un lien direct vers la liste des partenair
 _Exemple de liste des finalités_
 
 <p align="center">
-  <img src="images/cnil-fr/android_cnil_fr_choices_1.png" alt="Consent tool Purpose List on Android" width="40%" height="40%"/>
   <img src="images/cnil-fr/android_cnil_fr_choices_2.png" alt="Consent tool Purpose List 2 on Android" width="40%" height="40%"/>
 </p>
 
