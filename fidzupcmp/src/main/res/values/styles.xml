@@ -10,7 +10,7 @@
 
         <!-- colorAccent is used as the default value for colorControlActivated
              which is used to tint widgets -->
-        <item name="colorAccent">@color/fidzup_blue</item>
+        <item name="colorAccent">@color/main_color</item>
 
         <!-- You can also set colorControlNormal, colorControlActivated
              colorControlHighlight & colorSwitchThumbNormal. -->
@@ -38,7 +38,7 @@
     </style>
 
     <style name="VendorsLink" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/fidzup_blue</item>
+        <item name="android:textColor">@color/main_color</item>
     </style>
 
     <style name="ConsentButton" parent="Widget.AppCompat.Button">

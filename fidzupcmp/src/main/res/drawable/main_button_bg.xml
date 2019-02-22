@@ -23,7 +23,7 @@
         <selector>
             <item android:state_enabled="true">
                 <shape>
-                    <solid android:color="@color/fidzup_blue" />
+                    <solid android:color="@color/main_color" />
                 </shape>
             </item>
             <item android:state_enabled="false">

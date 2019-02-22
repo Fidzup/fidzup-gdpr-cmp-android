@@ -13,7 +13,7 @@ import android.support.annotation.StringRes;
 public class ConsentToolConfiguration {
 
 
-    public static int NONE = 0;
+    public final static int NONE = 0;
 
     // The application context. Needed to retrieve the strings.
     @NonNull

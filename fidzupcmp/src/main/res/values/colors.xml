@@ -3,7 +3,7 @@
     <color name="ui_features_light">#dadada</color>
     <color name="ui_features">#aaaaaa</color>
     <color name="big_text">#6E7074</color>
-    <color name="fidzup_blue">#1AC0F8</color>
+    <color name="main_color">#1AC0F8</color>
     <color name="button_text">#ffffff</color>
     <color name="disabled_button_bg">#bbbbbb</color>
 </resources>

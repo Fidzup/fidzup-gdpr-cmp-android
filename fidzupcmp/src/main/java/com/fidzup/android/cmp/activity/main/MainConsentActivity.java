@@ -117,7 +117,16 @@ public class MainConsentActivity extends ConsentActivity {
 
             if (holder.getItemViewType() == TYPE_HEADER) {
                 MainActivityHeaderLayout header = (MainActivityHeaderLayout)holder.itemView;
-                header.getLogo().setImageResource(cmpConfig.getHomeScreenLogoDrawableRes());
+
+                int logoRes = cmpConfig.getHomeScreenLogoDrawableRes();
+                if (logoRes != ConsentToolConfiguration.NONE) {
+                    header.getLogo().setImageResource(logoRes);
+                    header.getLogo().setVisibility(View.VISIBLE);
+                }
+                else {
+                    header.getLogo().setVisibility(View.GONE);
+                }
+
                 header.getTitle().setText(cmpConfig.getConsentManagementScreenTitle());
                 header.getDisclaimer().setText(cmpConfig.getHomeScreenText());
                 header.getVendorsLink().setText(cmpConfig.getConsentManagementVendorListActivityAccessText());

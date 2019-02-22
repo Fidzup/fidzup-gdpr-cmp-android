@@ -40,7 +40,7 @@ public class FidzupCMPDemoApplication extends MultiDexApplication implements Con
 
     private ConsentToolConfiguration generatedConsentToolConfiguration() {
         ConsentToolConfiguration consentToolConfiguration = new ConsentToolConfiguration(this,
-                R.drawable.logo_fidzup,
+                R.drawable.logo_fidzup, // use ConsentToolConfiguration.NONE if no image to display
                 R.string.cmp_home_screen_text,
                 R.string.cmp_home_screen_manage_consent_button_title,
                 R.string.cmp_home_screen_close_button_title,
