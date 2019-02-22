@@ -102,7 +102,6 @@ public class VendorActivity extends AppCompatActivity {
 
         // Setup the privacy policy button
         Button privacyPolicyButton = findViewById(R.id.privacy_policy_button);
-        //privacyPolicyButton.getBackground().setColorFilter(getResources().getColor(R.color.actionButtonColor), PorterDuff.Mode.MULTIPLY);
         privacyPolicyButton.setText(config.getConsentManagementVendorDetailViewPrivacyButtonTitle());
 
         // Display the privacy policy button only if there is a privacy policy available.
